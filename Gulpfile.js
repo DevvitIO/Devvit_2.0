@@ -51,7 +51,6 @@ const imagemin = require('gulp-imagemin'); //https://github.com/sindresorhus/gul
       .pipe(rename('stylesInUse.css'))
       .pipe(gulp.dest('./Dev/css/'));
   });
-
 // minifyCss Task
   gulp.task('minifyCss', () => {
     const processors = [
