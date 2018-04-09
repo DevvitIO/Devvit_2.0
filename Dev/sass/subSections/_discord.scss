@@ -3,8 +3,9 @@
 }
 
 .discord {
+  @include offsetShadow(1px, 0px, 1px, 0px);
   display: grid;
-
+  border-radius: 1rem;
   grid-template-areas:
     ". . . . . .  "
     ". . btn btn btn ."

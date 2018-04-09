@@ -14,7 +14,7 @@ body {
     " getInvolved getInvolved getInvolved     getInvolved discord discord "
     " projects projects projects              projects projects projects ";
   grid-template-columns: [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4] 1fr [col-5] 1fr [col-6] 1fr;
-  grid-template-rows: 100vh 70vh auto auto;
+  grid-template-rows: 100vh 100vh auto auto;
 
   @media screen and (max-width: $break-point) {
     grid-template-columns: 100%;
