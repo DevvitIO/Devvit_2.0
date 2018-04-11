@@ -135,10 +135,12 @@ body {
   text-align: center; }
 
 .purpose {
-  text-align: center; }
+  color: white;
+  text-align: center;
+  background-color: #1d222c; }
   .purpose div {
-    margin-top: 3rem;
-    font-size: 20px; }
+    font-size: 20px;
+    margin-top: 3rem; }
 
 .discord-widget {
   border-color: #1daf39 !important; }

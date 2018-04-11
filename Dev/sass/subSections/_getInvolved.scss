@@ -22,8 +22,8 @@
  ". . three three three . ."
  ". four four . five five ."
  ". . six six six . .";
-      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-      grid-template-columns: 0fr 1fr 1fr 1fr 1fr 1fr 0fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 0fr 1fr 1fr 1fr 1fr 1fr 0fr;
     }
   }
 }
@@ -33,7 +33,7 @@
   border-radius:1rem;
   font-size: 1.2rem;
   text-align:center;
-padding:2rem 1rem;
+  padding:2rem 1rem;
   grid-area: one;
 }
 .two {
@@ -51,7 +51,7 @@ padding:2rem 1rem;
 
   font-size: 1.2rem;
   text-align:center;
-padding:2rem 1rem;
+  padding:2rem 1rem;
   grid-area: three;
 }
 .four {
@@ -66,7 +66,7 @@ padding:2rem 1rem;
 .five {
 
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
-    border-radius:1rem;
+  border-radius:1rem;
 
   font-size: 1.2rem;
   text-align:center;
