@@ -6,6 +6,9 @@
   background-color : rgb(29, 34, 44);div {
     font-size : 20px; 
 
-    margin-top : 3rem;
+    margin-top: 0.5rem;
+    &:not(:last-child){
+      margin-top: 3rem;
+    }
   }
 }
