@@ -1,0 +1,24 @@
+.discord {
+  @include offsetShadow(1px, 0px, 1px, 0px);
+  display: grid;
+  border-radius: 1rem;
+  grid-template-areas:
+    ". . . . . .  "
+    ". . btn btn btn ."
+    ". . widget widget widget .  "
+    ". . . . . .  ";
+
+  grid-template-columns: [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4] 1fr [col-5] 1fr [col-6] 1fr;
+  grid-template-rows: .5fr 1fr 1fr .5fr;
+
+  @media screen and (max-width: $break-point) {
+    padding: 4%;
+    grid-template-columns: 100%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+      " btn "
+      " widget ";
+    grid-row-gap: 20px;
+  }
+
+  https://blog.prototypr.io/how-to-create-the-snake-highlight-animation-with-anime-js-bf9c6cb66434

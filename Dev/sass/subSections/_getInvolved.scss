@@ -1,81 +1,112 @@
 .getInvolved {
     border-radius:1rem;
 
-    @include offsetShadow(1px, 0px, 1px, 0px);
+ 
   .getInvolvedGridContainer {
     display: grid;
 
     grid-template-areas:
-". . one one one . ."
+ ". . one one one . ."
  ". . two two two . ."
  ". . three three three . ."
  ". four four . five five ."
  ". . six six six . .";
+    grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 10%;
     grid-template-columns: [col-1] 0.5fr [col-2] 1fr [col-3] 1fr [col-4] 1fr [col-5] 1fr [col-6] 1fr [col-7] 0.5fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     align-items: center;
 
     @media screen and (max-width: $break-point) {
       grid-template-areas:
 ". . one one one . ."
- ". . two two two . ."
- ". . three three three . ."
- ". four four . five five ."
- ". . six six six . .";
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+". . two two two . ."
+". . three three three . ."
+". four four . five five ."
+". . six six six . .";
+    grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
     grid-template-columns: 0fr 1fr 1fr 1fr 1fr 1fr 0fr;
     }
   }
 }
 
 .one {
-  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
-  border-radius:1rem;
-  font-size: 1.2rem;
-  text-align:center;
-  padding:2rem 1rem;
+  @extend %getInvolvedBullet;
   grid-area: one;
 }
 .two {
-  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
-  border-radius:1rem;
-
-  font-size: 1.2rem;
-  text-align:center;
-padding:2rem 1rem;
+  @extend %getInvolvedBullet;
   grid-area: two;
 }
 .three {
-  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
-  border-radius:1rem;
-
-  font-size: 1.2rem;
-  text-align:center;
-  padding:2rem 1rem;
+  @extend %getInvolvedBullet;
   grid-area: three;
 }
 .four {
-  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
-  border-radius:1rem;
-
-  font-size: 1.2rem;
-  text-align:center;
-padding:2rem 1rem;
+  @extend %getInvolvedBullet;
   grid-area: four;
 }
 .five {
-
-  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
-  border-radius:1rem;
-
-  font-size: 1.2rem;
-  text-align:center;
-  padding:2rem 1rem;
+  @extend %getInvolvedBullet;
   grid-area: five;
 }
 .six {
-    grid-area: six;
+  grid-area: six;
    font-size: 2rem;
    text-align:center;
    padding:3rem 0rem;
+
+   /* Discord Container and Widget Styles */
+   .discord-widget {
+  border-color: $logoDG !important;
 }
+
+  a.btn {
+    color: $body-Font;
+
+    padding: .5rem 1rem;
+
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+
+    border: 0;
+    border-radius: 4px;
+    background: linear-gradient(70deg, $logoBG, $logoDG, $logoBR, $logoDR);
+    background-position:1%;
+    background-size:1500px;
+
+
+    @include offsetShadow(0px, 4px, 3px, 2px);
+
+    &:hover {
+      color:white;
+      background-position:99%;
+   @include offsetShadow(0px, 2px, 3px, 1px);
+    }
+  }
+
+  .widget {
+    margin-top:1rem;
+    max-height: 12.7rem;
+    position: relative;
+    overflow-y: scroll;
+
+
+
+    .container {
+      max-height: 12.7rem;
+    }
+  }
+}
+
+.widget::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.widget::-webkit-scrollbar {
+  width: 4px;
+
+  background-color: #3e3f3a;
+}
+.widget::-webkit-scrollbar-thumb {
+  background-color: #c9c8b8;
+}
+
+

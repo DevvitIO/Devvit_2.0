@@ -11,7 +11,7 @@ body {
   grid-template-areas:
     " landing landing landing                 landing landing landing "
     " purpose purpose purpose                 purpose purpose purpose "
-    " getInvolved getInvolved getInvolved     getInvolved discord discord "
+    " . getInvolved getInvolved     getInvolved getInvolved ."
     " projects projects projects              projects projects projects ";
   grid-template-columns: [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4] 1fr [col-5] 1fr [col-6] 1fr;
   grid-template-rows: 100vh 100vh auto auto;
@@ -23,7 +23,6 @@ body {
       " landing "
       " purpose "
       " getInvolved "
-      " discord "
       " projects ";
   }
 }

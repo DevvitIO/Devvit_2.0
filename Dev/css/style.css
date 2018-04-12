@@ -6,6 +6,13 @@ body {
 h1, h2, h3, h4, h5 {
   font-family: "Nunito", sans-serif; }
 
+.one, .two, .three, .four, .five {
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 1rem 1rem; }
+
 span,
 input,
 form,
@@ -99,14 +106,14 @@ body {
 
 .gridContainer {
   display: grid;
-  grid-template-areas: " landing landing landing                 landing landing landing " " purpose purpose purpose                 purpose purpose purpose " " getInvolved getInvolved getInvolved     getInvolved discord discord " " projects projects projects              projects projects projects ";
+  grid-template-areas: " landing landing landing                 landing landing landing " " purpose purpose purpose                 purpose purpose purpose " " . getInvolved getInvolved     getInvolved getInvolved ." " projects projects projects              projects projects projects ";
   grid-template-columns: [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4] 1fr [col-5] 1fr [col-6] 1fr;
   grid-template-rows: 100vh 100vh auto auto; }
   @media screen and (max-width: 830px) {
     .gridContainer {
       grid-template-columns: 100%;
       grid-template-rows: 100vh auto auto auto auto;
-      grid-template-areas: " landing " " purpose " " getInvolved " " discord " " projects "; } }
+      grid-template-areas: " landing " " purpose " " getInvolved " " projects "; } }
 
 .landing {
   grid-area: landing; }
@@ -142,43 +149,65 @@ body {
     font-size: 20px;
     margin-top: 3rem; }
 
-.discord-widget {
-  border-color: #1daf39 !important; }
+.getInvolved {
+  border-radius: 1rem; }
+  .getInvolved .getInvolvedGridContainer {
+    display: grid;
+    grid-template-areas: ". . one one one . ." ". . two two two . ." ". . three three three . ." ". four four . five five ." ". . six six six . .";
+    grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 10%;
+    grid-template-columns: [col-1] 0.5fr [col-2] 1fr [col-3] 1fr [col-4] 1fr [col-5] 1fr [col-6] 1fr [col-7] 0.5fr;
+    align-items: center; }
+    @media screen and (max-width: 830px) {
+      .getInvolved .getInvolvedGridContainer {
+        grid-template-areas: ". . one one one . ." ". . two two two . ." ". . three three three . ." ". four four . five five ." ". . six six six . .";
+        grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
+        grid-template-columns: 0fr 1fr 1fr 1fr 1fr 1fr 0fr; } }
 
-.discord {
-  box-shadow: 1px 0px 1px 0px rgba(0, 0, 0, 0.2);
-  display: grid;
-  border-radius: 1rem;
-  grid-template-areas: ". . . . . .  " ". . btn btn btn ." ". . widget widget widget .  " ". . . . . .  ";
-  grid-template-columns: [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4] 1fr [col-5] 1fr [col-6] 1fr;
-  grid-template-rows: .5fr 1fr 1fr .5fr; }
-  @media screen and (max-width: 830px) {
-    .discord {
-      padding: 4%;
-      grid-template-columns: 100%;
-      grid-template-rows: 50% 50%;
-      grid-template-areas: " btn " " widget ";
-      grid-row-gap: 20px; } }
-  .discord a.btn {
+.one {
+  grid-area: one; }
+
+.two {
+  grid-area: two; }
+
+.three {
+  grid-area: three; }
+
+.four {
+  grid-area: four; }
+
+.five {
+  grid-area: five; }
+
+.six {
+  grid-area: six;
+  font-size: 2rem;
+  text-align: center;
+  padding: 3rem 0rem;
+  /* Discord Container and Widget Styles */ }
+  .six .discord-widget {
+    border-color: #1daf39 !important; }
+  .six a.btn {
     color: #333;
-    padding: 1rem;
-    -webkit-transition: background-image 0.2s ease-in-out;
-    transition: background-image 0.2s ease-in-out;
+    padding: .5rem 1rem;
+    transition: all 0.3s ease-in-out;
     text-align: center;
     border: 0;
     border-radius: 4px;
-    background-image: linear-gradient(15deg, #1daf39, #01ff30);
-    grid-area: btn;
+    background: linear-gradient(70deg, #01ff30, #1daf39, #ff0172, #a31153);
+    background-position: 1%;
+    background-size: 1500px;
     box-shadow: 0px 4px 3px 2px rgba(0, 0, 0, 0.2); }
-    .discord a.btn:hover {
+    .six a.btn:hover {
       color: white;
-      background-image: linear-gradient(15deg, #a31153, #ff0172); }
-  .discord .widget {
+      background-position: 99%;
+      box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.2); }
+  .six .widget {
+    margin-top: 1rem;
+    max-height: 12.7rem;
     position: relative;
-    overflow-y: scroll;
-    grid-area: widget; }
-    .discord .widget .container {
-      max-height: 20rem; }
+    overflow-y: scroll; }
+    .six .widget .container {
+      max-height: 12.7rem; }
 
 .widget::-webkit-scrollbar-track {
   background-color: transparent; }
@@ -190,69 +219,8 @@ body {
 .widget::-webkit-scrollbar-thumb {
   background-color: #c9c8b8; }
 
-.getInvolved {
-  border-radius: 1rem;
-  box-shadow: 1px 0px 1px 0px rgba(0, 0, 0, 0.2); }
-  .getInvolved .getInvolvedGridContainer {
-    display: grid;
-    grid-template-areas: ". . one one one . ." ". . two two two . ." ". . three three three . ." ". four four . five five ." ". . six six six . .";
-    grid-template-columns: [col-1] 0.5fr [col-2] 1fr [col-3] 1fr [col-4] 1fr [col-5] 1fr [col-6] 1fr [col-7] 0.5fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    align-items: center; }
-    @media screen and (max-width: 830px) {
-      .getInvolved .getInvolvedGridContainer {
-        grid-template-areas: ". . one one one . ." ". . two two two . ." ". . three three three . ." ". four four . five five ." ". . six six six . .";
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-columns: 0fr 1fr 1fr 1fr 1fr 1fr 0fr; } }
-
-.one {
-  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 1rem;
-  font-size: 1.2rem;
-  text-align: center;
-  padding: 2rem 1rem;
-  grid-area: one; }
-
-.two {
-  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 1rem;
-  font-size: 1.2rem;
-  text-align: center;
-  padding: 2rem 1rem;
-  grid-area: two; }
-
-.three {
-  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 1rem;
-  font-size: 1.2rem;
-  text-align: center;
-  padding: 2rem 1rem;
-  grid-area: three; }
-
-.four {
-  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 1rem;
-  font-size: 1.2rem;
-  text-align: center;
-  padding: 2rem 1rem;
-  grid-area: four; }
-
-.five {
-  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 1rem;
-  font-size: 1.2rem;
-  text-align: center;
-  padding: 2rem 1rem;
-  grid-area: five; }
-
-.six {
-  grid-area: six;
-  font-size: 2rem;
-  text-align: center;
-  padding: 3rem 0rem; }
-
 .projects {
-  margin-top: 20vh;
+  margin-top: 10vh;
   padding-left: 0;
   padding-right: 0; }
   .projects .projectsContainer {
