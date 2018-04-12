@@ -74,12 +74,12 @@
     background-size:1500px;
 
 
-    @include offsetShadow(0px, 4px, 3px, 2px);
+    @include box-shadow(1);
 
     &:hover {
       color:white;
       background-position:99%;
-   @include offsetShadow(0px, 2px, 3px, 1px);
+      @include box-shadow(2);
     }
   }
 
