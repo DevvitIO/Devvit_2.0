@@ -6,11 +6,12 @@
 }
 
 %getInvolvedBullet{
-  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+  @include box-shadow(1);
   border-radius:1rem;
   font-size: 1.2rem;
   text-align:center;
   padding:1rem 1rem;
+  background-color: white;
 }
 
 %outsideMargin {
@@ -54,7 +55,7 @@
   border-radius: 5px;
 
   align-items: center;
-  @include offsetShadow(1px, 2px, 2px, 1px);
+  @include box-shadow(1);
   justify-content: center;
   h2 {
     margin-bottom: 1rem;
@@ -63,6 +64,13 @@
     display: block;
 
     margin-bottom: 1rem;
+  }
+  a{
+    color: black;
+    opacity: 0.7;
+    &:hover{
+      opacity: 0.9;
+    }
   }
 
   @media screen and (max-width: $break-point) {
