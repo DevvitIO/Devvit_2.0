@@ -1,3 +1,19 @@
+@mixin box-shadow($level: 1) {
+  @if $level == 1 {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  } @else if $level == 2 {
+    box-shadow: 0 6px 9px rgba(0, 0, 0, 0.16);
+  } @else if $level == 3 {
+    box-shadow: 0 9px 12px rgba(0, 0, 0, 0.16);
+  } @else if $level == 4 {
+    box-shadow: 0 12px 15px rgba(0, 0, 0, 0.16);
+  } @else if $level == 5 {
+    box-shadow: 0 15px 18px rgba(0, 0, 0, 0.16);
+  } @else if $level == 6 {
+    box-shadow: 0 18px 21px rgba(0, 0, 0, 0.16);
+  }
+}
+
 @mixin rounded-corner($arc) {
   border-radius : $arc;
 }
