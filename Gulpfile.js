@@ -71,7 +71,7 @@ const imagemin = require('gulp-imagemin'); //https://github.com/sindresorhus/gul
 // pipeAllFiles task
   gulp.task('pipeAllFiles', () => {  // to ensure that all files have been transferred to Build Folder
     const html = './Dev/*.html';
-    const scripts = './Dev/scripts/*.js';
+    // const scripts = './Dev/scripts/*.js'; removed so concat works properly
     const css = './Dev/css/*.css';
 
     gulp.src(html)
@@ -98,6 +98,7 @@ const imagemin = require('gulp-imagemin'); //https://github.com/sindresorhus/gul
         .pipe(gulp.dest('./Build/')); //spits it out in this directory  cwd/dist/
     });
 
+
 // sassStyles task 
   gulp.task('sassStyles', () => {
     gulp.src('Dev/sass/**/*.scss') //relative to Gulpfile.js 
@@ -107,17 +108,46 @@ const imagemin = require('gulp-imagemin'); //https://github.com/sindresorhus/gul
 
 
 
-gulp.task('default', ['sassStyles','sass']);
 
+  /* ||||||| Project Specific Build Command ||||||| */
+    gulp.task('concatJS', () => {
+      return gulp.src(['./Dev/scripts/zenscroll.js', './Dev/scripts/main.js'])  //the files will be concatted in the order they are specified here
+        .pipe(concat('main.js'))
+        .pipe(gulp.dest('./Build/scripts')); //spits it out in this directory  cwd/dist/
+        gulp.task('minify');
+    });
+
+  /* ||||||| Project Specific Build Command ||||||| */
+gulp.task('minifyJS', () => {
+    gulp.src('./Build/scripts/main.js')
+      .pipe(babel({
+        presets: ['env']
+      }))
+      .pipe(uglify())
+      .pipe(gulp.dest('./Build/scripts'))
+})
+
+
+
+gulp.task('default', ['sassStyles','sass']);
 
   gulp.task('default', () => {
     gulp.watch('Dev/sass/**/*.scss', ['sassStyles']); //path to the files to watch, pass in an array with the tasks that we want to run when the files are changed
   });
+
+
   gulp.task('test', ['checkCss']) //to test against bulma files in use
   gulp.task('minify', ['babel','minifyCss',])  //minfies everything
   gulp.task('babelify', ['babel']) //calls babel and then minifies the output 
   gulp.task('bodyInjectCss', ['inlineCss']);
   gulp.task('plsgo', ['pipeAllFiles', 'minify', 'imageMin']);
+  
+
+
+
+  /* ||||||| Project Specific Build Command ||||||| */
+  gulp.task('plsgoconcat', ['pipeAllFiles', 'minify', 'imageMin', 'concatJS']); 
+  //  then run minifyJS so that it uglifies the concatted JS, i forgot how to set an order correctly with gulp.
 
 
   gulp.task('sass', () => {
